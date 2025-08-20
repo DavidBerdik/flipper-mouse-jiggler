@@ -3,10 +3,11 @@ App(
     name="Mouse Jiggler",
     apptype=FlipperAppType.EXTERNAL,
     entry_point="mouse_jiggler_app",
+    fap_category="USB",
+    fap_version=(1, 0),
     cdefines=["APP_MOUSEJIGGLER"],
     requires=[
         "gui",
     ],
     stack_size=1 * 1024,
-    order=60,
 )
