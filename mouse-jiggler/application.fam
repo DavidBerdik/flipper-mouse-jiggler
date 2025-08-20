@@ -5,6 +5,7 @@ App(
     entry_point="mouse_jiggler_app",
     fap_category="USB",
     fap_version=(1, 0),
+    fap_icon="mouse_jiggler.png",
     cdefines=["APP_MOUSEJIGGLER"],
     requires=[
         "gui",
