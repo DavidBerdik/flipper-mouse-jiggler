@@ -4,6 +4,8 @@
 #include <input/input.h>
 #include <mouse_jiggler_icons.h>
 
+const char VERSION[] = "1.0";
+
 typedef enum {
     EventTypeInput,
 } EventType;
@@ -22,9 +24,12 @@ static void mouse_jiggler_render_callback(Canvas* canvas, void* ctx) {
     canvas_draw_icon(canvas, 0, 0, &I_mouse_jiggler);
 
     canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str(canvas, 14, 10, "USB Mouse Jiggler");
+    canvas_draw_str(canvas, 14, 9, "Mouse Jiggler v");
+    canvas_draw_str(canvas, 94, 9, VERSION);
 
     canvas_set_font(canvas, FontSecondary);
+    canvas_draw_str(canvas, 0, 33, "GitHub.com/DavidBerdik/");
+    canvas_draw_str(canvas, 0, 43, "flipper-mouse-jiggler");
     canvas_draw_str(canvas, 0, 63, "Hold [back] to exit");
 }
 
