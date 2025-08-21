@@ -13,6 +13,6 @@ This simple application is a fork of Matthew Willard's [`flipper-mouse-jiggler`]
 ## Building
 1. Clone this repository.
 2. [Install uFBT.](https://github.com/flipperdevices/flipperzero-ufbt)
-3. Using a command line, navigate to the `mouse-jiggler` directory and execute the following command: `ufbt faps`
+3. Using a command line, navigate to this repository's directory and execute the following command: `ufbt faps`
 4. Once the build completes, a `dist` folder will be created. This folder will contain the compiled FAP file.
 5. You can run the compiled FAP file by manually copying it to your Flipper as described above or by executing the following command: `ufbt launch`
