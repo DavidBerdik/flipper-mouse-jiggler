@@ -1,5 +1,8 @@
 # Mouse Jiggler for Flipper Zero
-Modified "Mouse USB Preview" and another person's jiggle code to create THIS jiggle app that constently jiggles!
+This simple application is a fork of Matthew Willard's [`flipper-mouse-jiggler`](https://github.com/matthewwwillard/flipper-mouse-jiggler). Unlike other mouse jiggler implementations for the Flipper Zero, this one introduces an element of randomness to the movement patterns instead of performing a simple back-and-forth cycle.
+
+> [!CAUTION]
+> Do not use this application to interact with a system that you do not own unless you have explicitly been granted permission to do so. If you choose to use this application in an unauthorized manner, I am not responsible for the consequences you may face.
 
 ## Installing
 1. Download the FAP file from the [release page](https://github.com/DavidBerdik/flipper-mouse-jiggler/releases).
