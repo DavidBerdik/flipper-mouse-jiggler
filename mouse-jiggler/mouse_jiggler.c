@@ -3,9 +3,6 @@
 #include <gui/gui.h>
 #include <input/input.h>
 
-#define MOUSE_MOVE_SHORT 5
-#define MOUSE_MOVE_LONG 20
-
 typedef enum {
     EventTypeInput,
 } EventType;
@@ -36,14 +33,31 @@ static void mouse_jiggler_input_callback(InputEvent* input_event, void* ctx) {
     event.input = *input_event;
     furi_message_queue_put(event_queue, &event, FuriWaitForever);
 }
-static void mouse_jiggler_jiggle(void* ctx)
-{
-    UNUSED(ctx);
-    FURI_LOG_I("mouse_jiggler", "Jiggling!");
-    furi_hal_hid_mouse_move(MOUSE_MOVE_LONG, 0);
-    furi_delay_ms(500);
-    furi_hal_hid_mouse_move(-MOUSE_MOVE_LONG, 0);
-    furi_delay_ms(500);
+static void mouse_jiggler_jiggle(void* ctx) {
+	UNUSED(ctx);
+	
+    static short horizontal_travel_dist = 0;
+	static short horizontal_movement_cycles = 0;
+	static short horizontal_current_cycle = 0;
+    static short vertical_travel_dist = 0;
+	static short vertical_movement_cycles = 0;
+	static short vertical_current_cycle = 0;
+
+    if(horizontal_current_cycle >= horizontal_movement_cycles) {
+        horizontal_travel_dist = furi_hal_random_get() % 3 - 1;
+        horizontal_movement_cycles = furi_hal_random_get() % 1000 + 1;
+        horizontal_current_cycle = 0;
+    }
+	
+	if(vertical_current_cycle >= vertical_movement_cycles) {
+        vertical_travel_dist = furi_hal_random_get() % 3 - 1;
+        vertical_movement_cycles = furi_hal_random_get() % 1000 + 1;
+        vertical_current_cycle = 0;
+    }
+
+    furi_hal_hid_mouse_move(horizontal_travel_dist, vertical_travel_dist);
+    horizontal_current_cycle++;
+    vertical_current_cycle++;
 }
 int32_t mouse_jiggler_app(void* p) {
     UNUSED(p);
@@ -65,7 +79,7 @@ int32_t mouse_jiggler_app(void* p) {
     Gui* gui = furi_record_open(RECORD_GUI);
     gui_add_view_port(gui, view_port, GuiLayerFullscreen);
 
-    furi_timer_start(timer, furi_kernel_get_tick_frequency());
+    furi_timer_start(timer, 3);
 
     UsbMouseEvent event;
 
