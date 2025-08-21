@@ -2,7 +2,7 @@ sourcecode:
   type: git
   location:
     origin: https://github.com/DavidBerdik/flipper-mouse-jiggler.git
-    commit_sha: e538efb7a94e8490f78bbab4a21fabc2981dd087
+    commit_sha: e9a23edbf697bd14136773f3de9a6f61db70d1d3
 short_description: A simple mouse jiggler for the Flipper Zero
 description: "@README.md"
 changelog: "@CHANGELOG.md"
