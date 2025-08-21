@@ -1,8 +1,8 @@
 # Flipper Mouse Jiggler
 Modified "Mouse USB Preview" and another person's jiggle code to create THIS jiggle app that constently jiggles!
 
-## How To Install
-1. Clone the Flipper Zero OS
-2. Add 'mouse-jiggler' folder to the 'application' folder
-3. Add 'mouse_jiggler' to 'applications/meta/application.fam' under 'custom_plugins'
-4. Build and install to your flipper!    
+## Installing
+1. Download the FAP file from the [release page](https://github.com/DavidBerdik/flipper-mouse-jiggler/releases).
+2. Copy the FAP file to your Flipper. The easiest way to do this is by using the [qFlipper desktop application](https://flipperzero.one/downloads). The recommended storage location for this application is `SD Card/apps/USB/`.
+3. On your Flipper, navigate to `Apps > USB > Mouse Jiggler` and launch the application.
+4. Plug your Flipper in to a computer using a USB cable. While the application is running, the Flipper will present itself to the computer as a mouse and send arbitrary movement instructions to the system.
