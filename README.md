@@ -6,3 +6,10 @@ Modified "Mouse USB Preview" and another person's jiggle code to create THIS jig
 2. Copy the FAP file to your Flipper. The easiest way to do this is by using the [qFlipper desktop application](https://flipperzero.one/downloads). The recommended storage location for this application is `SD Card/apps/USB/`.
 3. On your Flipper, navigate to `Apps > USB > Mouse Jiggler` and launch the application.
 4. Plug your Flipper in to a computer using a USB cable. While the application is running, the Flipper will present itself to the computer as a mouse and send arbitrary movement instructions to the system.
+
+## Building
+1. Clone this repository.
+2. [Install uFBT.](https://github.com/flipperdevices/flipperzero-ufbt)
+3. Using a command line, navigate to the `mouse-jiggler` directory and execute the following command: `ufbt faps`
+4. Once the build completes, a `dist` folder will be created. This folder will contain the compiled FAP file.
+5. You can run the compiled FAP file by manually copying it to your Flipper as described above or by executing the following command: `ufbt launch`
