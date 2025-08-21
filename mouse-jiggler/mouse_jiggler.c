@@ -2,6 +2,7 @@
 #include <furi_hal.h>
 #include <gui/gui.h>
 #include <input/input.h>
+#include <mouse_jiggler_icons.h>
 
 typedef enum {
     EventTypeInput,
@@ -18,8 +19,10 @@ static void mouse_jiggler_render_callback(Canvas* canvas, void* ctx) {
     UNUSED(ctx);
     canvas_clear(canvas);
 
+    canvas_draw_icon(canvas, 0, 0, &I_mouse_jiggler);
+
     canvas_set_font(canvas, FontPrimary);
-    canvas_draw_str(canvas, 0, 10, "USB Mouse Jiggler");
+    canvas_draw_str(canvas, 14, 10, "USB Mouse Jiggler");
 
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str(canvas, 0, 63, "Hold [back] to exit");
