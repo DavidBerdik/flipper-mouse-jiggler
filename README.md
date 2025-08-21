@@ -1,4 +1,4 @@
-# Flipper Mouse Jiggler
+# Mouse Jiggler for Flipper Zero
 Modified "Mouse USB Preview" and another person's jiggle code to create THIS jiggle app that constently jiggles!
 
 ## Installing
