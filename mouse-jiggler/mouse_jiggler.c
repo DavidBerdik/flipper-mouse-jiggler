@@ -4,7 +4,7 @@
 #include <input/input.h>
 #include <mouse_jiggler_icons.h>
 
-const char VERSION[] = "1.0";
+#define APP_VERSION "1.0"
 
 typedef enum {
     EventTypeInput,
@@ -25,7 +25,7 @@ static void mouse_jiggler_render_callback(Canvas* canvas, void* ctx) {
 
     canvas_set_font(canvas, FontPrimary);
     canvas_draw_str(canvas, 14, 9, "Mouse Jiggler v");
-    canvas_draw_str(canvas, 94, 9, VERSION);
+    canvas_draw_str(canvas, 94, 9, APP_VERSION);
 
     canvas_set_font(canvas, FontSecondary);
     canvas_draw_str(canvas, 0, 33, "GitHub.com/DavidBerdik/");
